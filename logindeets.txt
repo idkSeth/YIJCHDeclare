@@ -1,0 +1,4 @@
+user_login = "Enter login here"
+PW = "Enter PW here"
+
+#Ensure that there is no space after '"'
