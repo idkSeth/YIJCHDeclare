@@ -2,6 +2,7 @@ import requests
 
 iftttdeets = open(r"C:\Users\setho\Desktop\YIJCHDeclare\deets.txt", mode = "r")
 iftttdeetsex = iftttdeets.readlines()
+beta = False
 
 if (iftttdeetsex[0])[7:11] == "True" :
     beta = True
