@@ -1,12 +1,11 @@
 from webbot import Browser
 from datetime import *
 from time import *
-from IFTTT_Alert import *
 
-deets = open(r"logindeets.txt", mode = "r")
-deetsex = deets.readlines()
-user_login = (deetsex[0])
-PW = (deetsex[1])
+with open(r"logindeets.txt", mode = "r") as f:
+    user = f.readlines()
+    user_login = user[0]
+    PW = user[1]
 
 
 portal = "https://portal.yijc.edu.sg/"
@@ -17,9 +16,7 @@ now = datetime.now()
 time = now.strftime("%H:%M:%S")
 date_time = date + " " + time
 
-location = r"Health Dec SS"
-
-#Browser(showWindow = False , proxy = None)
+location = r"SS"
 
 web = Browser()
 web.go_to(portal)
@@ -42,5 +39,4 @@ web.click(id="ui-form-submit-84a7e5d37733d403bdf70ba7a5bb5e81")                 
 sleep(1)
 web.click(text = "Submit")
 web.save_screenshot(location + "\\" + date + ".png")
-IFTTT_Alert("websubmit.py ran successfully", date_time, "")
 web.quit()

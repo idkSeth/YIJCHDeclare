@@ -1,8 +1,6 @@
 import sys
-from School_Day import *
-from IFTTT_Alert import *
-from datetime import date
-from datetime import datetime
+from School_Day import school_day
+from datetime import date, datetime
 
 today = date.today()
 date = today.strftime("%d-%b-%Y")
@@ -13,13 +11,11 @@ def run(flag):
         now = datetime.now()
         time = now.strftime("%H:%M:%S")
         date_time = date + " " + time
-        IFTTT_Alert("main.py executed websubmit.py", date_time, "" )
         print("main.py executed websubmit.py", date_time, "")
     else:
         now = datetime.now()
         time = now.strftime("%H:%M:%S")
         date_time = date + " " + time
-        IFTTT_Alert("main.py ran successfully, today is not a school day, websubmit.py not executed", date + " " + time, "")
         print("main.py ran successfully, today is not a school day, websubmit.py not executed", date + " " + time, "")
 
 def edit():

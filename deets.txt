@@ -1,5 +1,0 @@
-IFTTT: False
-
-<Replace with your IFTTT Webhooks>
-
-#IFTTT Webhooks 

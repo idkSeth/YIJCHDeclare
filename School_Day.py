@@ -7,28 +7,20 @@ year = today.strftime("%Y")
 
 file = r"{}_holidays.txt".format(year)
 
-holidays_file = open(file, mode = "r")
-
-holidays = holidays_file.readlines()
+with open(file, mode = "r") as f:
+    holidays = f.readlines()
 
 def holiday():
-    x = 0
-    while x != 65 :
-        if date == (holidays[x])[0:-1]:
+    for d in holidays:
+        if date == d[:-1]:
             return True
-        x = x + 1
-    else:
-        return False
+    return False
 
 
 def school_day():
-    if day == 3 or day == 5 or day == 6 :
-        #print("Today is a Thursday, Saturday or Sunday. " + day)
+    if day in (3,5,6):
         return False
-
-    elif holiday() == True :
-        #print("Today is a holiday")
+    elif holiday():
         return False
-
     else:
         return True
