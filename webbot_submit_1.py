@@ -1,6 +1,10 @@
+from datetime import datetime
+from time import sleep
+
 from webbot import Browser
-from datetime import *
-from time import *
+
+now = datetime.now()
+date = now.strftime("%d-%b-%Y")
 
 with open(r"logindeets.txt", mode = "r") as f:
     user = f.readlines()
@@ -9,13 +13,6 @@ with open(r"logindeets.txt", mode = "r") as f:
 
 
 portal = "https://portal.yijc.edu.sg/"
-
-today = date.today()
-date = today.strftime("%d-%b-%Y")
-now = datetime.now()
-time = now.strftime("%H:%M:%S")
-date_time = date + " " + time
-
 location = r"SS"
 
 web = Browser()
@@ -38,5 +35,6 @@ web.click(id="ui-form-submit-db37b6582df352a0b56ed8719035bc24-value", number = 2
 web.click(id="ui-form-submit-84a7e5d37733d403bdf70ba7a5bb5e81")                         #Certify Shit
 sleep(1)
 web.click(text = "Submit")
+sleep(2)
 web.save_screenshot(location + "\\" + date + ".png")
 web.quit()
