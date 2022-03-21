@@ -13,7 +13,6 @@ with open(r"logindeets.txt", mode = "r") as f:
 
 
 portal = "https://portal.yijc.edu.sg/"
-location = r"SS"
 
 web = Browser()
 web.go_to(portal)
@@ -42,5 +41,5 @@ web.click(id="ui-form-submit-84a7e5d37733d403bdf70ba7a5bb5e81")                 
 sleep(1)
 web.click(text = "Submit")
 sleep(2)
-web.save_screenshot(location + "\\" + date + ".png")
+web.save_screenshot(r"SS/{}.png".format(date))
 web.quit()
