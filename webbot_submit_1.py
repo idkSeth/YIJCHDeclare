@@ -14,7 +14,7 @@ with open(r"logindeets.txt", mode = "r") as f:
 
 portal = "https://portal.yijc.edu.sg/"
 
-web = Browser()
+web = Browser(showWindow=False)
 web.go_to(portal)
 sleep(5)
 web.type(user_login, id = "login")

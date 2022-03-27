@@ -18,7 +18,6 @@ def _holiday():
             return True
     return False
 
-
 def school_day():
     if day in (3,5,6):
         return False
