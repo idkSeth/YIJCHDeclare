@@ -1,10 +1,13 @@
+import os
+from dotenv import load_dotenv
+
 from telegram.ext import Updater
 from telegram import Update
 from telegram.ext import CallbackContext
 
-with open("telegram.txt") as f:
-    token = f.readlines()[0].strip()
+load_dotenv()
 
+token = os.getenv("bot_token")
 updater = Updater(token, use_context=True)
 updater.start_polling()
 dispatcher = updater.dispatcher 

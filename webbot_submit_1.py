@@ -1,15 +1,17 @@
+import os
+from dotenv import load_dotenv
 from datetime import datetime
 from time import sleep
 
 from webbot import Browser
 
+load_dotenv()
+
 now = datetime.now()
 date = now.strftime("%d-%b-%Y")
 
-with open(r"logindeets.txt", mode = "r") as f:
-    user = f.readlines()
-    user_login = user[0]
-    PW = user[1]
+user_login = os.getenv("portal_login")
+PW = os.getenv("portal_password")
 
 
 portal = "https://portal.yijc.edu.sg/"
