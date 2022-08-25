@@ -30,5 +30,6 @@ def run(flag):
 
 if __name__ == "__main__":
     run(None)
-    stop()
+    if os.getenv("use_bot") == "True":
+        stop()
     exit()
